@@ -1,12 +1,12 @@
 import random
 
 class pet:
-    happiness_level_max = 10 
+    happiness_level_max = 0 
     hunger_level_max = 10 
     def __init__ (self, name = "Spencer"):
         self.name = name
-        self.happiness_level = random.randrange(self.happiness_level_max)
-        self.hunger_level = random.randrange(self.hunger_level_max)
+        self.happiness_level = self.happiness_level_max
+        self.hunger_level = self.hunger_level_max
 
 
     def mood(self):
@@ -25,6 +25,7 @@ class pet:
         elif self.hunger_level > 7:
             return "I'M VERY HUNGRY, HUMAN"
 
+
 instance = pet("Bumblebee")
 
 print("1: Feed your pet")
@@ -33,8 +34,8 @@ print("3: Check your pet's levels")
 inp = int(input("Enter a number: "))
 
 if inp == 1:
-    instance.hunger_level -= 1
+    print("Your pet's hunger level is now:", instance.hunger_level - 1)
 elif inp == 2: 
-    instance.happiness_level += 1
+    print("Your pet's mood is now:", instance.happiness_level + 1)
 elif inp == 3: 
     print("Hunger:", instance.hunger(), "Mood:", instance.mood())
