@@ -3,7 +3,7 @@ import random
 class pet:
     happiness_level_max = 0 
     hunger_level_max = 10 
-    def __init__ (self, name = "Spencer"):
+    def __init__ (self, name):
         self.name = name
         self.happiness_level = self.happiness_level_max
         self.hunger_level = self.hunger_level_max
@@ -26,11 +26,14 @@ class pet:
             return "I'M VERY HUNGRY, HUMAN"
 
 
-instance = pet("Bumblebee")
+name = str(input("What would you like your Tamagotchi to be called?"))
+
+instance = pet(name)
 
 playing = True
 
 while playing is True:
+    print('What would you like to do with ' + instance.name + '?')
     print("1: Feed your pet")
     print("2: Play with your pet")
     print("3: Check your pet's levels")
