@@ -28,18 +28,21 @@ class pet:
 
 instance = pet("Bumblebee")
 
+playing = True
 
-while True:
+while playing is True:
     print("1: Feed your pet")
     print("2: Play with your pet")
     print("3: Check your pet's levels")
+    print("4: Exit game")
     inp = int(input("Enter a number: "))
     if inp == 1:
         instance.hunger_level -= 1
-        print("Your pet's hunger level is now:", instance.hunger_level )
+        print("Your pet's hunger level is now:", instance.hunger_level)
     elif inp == 2: 
         instance.happiness_level += 1
-        print("Your pet's mood is now:", instance.happiness_level )
+        print("Your pet's mood is now:", instance.happiness_level)
     elif inp == 3: 
         print("Hunger:", instance.hunger(), "Mood:", instance.mood())
-    
+    elif inp == 4:
+        break
